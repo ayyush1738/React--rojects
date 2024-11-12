@@ -21,6 +21,38 @@ function App() {
         />
         <button className='px-4 text-white bg-gray-800 outline-none py-0.5 shrink-0'>Copy</button>
       </div>
+      <div className='flex text-sm gap-x-2'>
+        <div className='flex items-center gap-x-4'>
+          <input type="range"
+            min={6}
+            max={20}
+            value={length}
+            className='cursor-pointer'
+            onChange={(e) => setLength(e.target.value)}
+            name=""
+            id=""
+          />
+          <label htmlFor="length">Length:{length}</label>
+          <div className='flex items-center gap-x-1'>
+            <input type="checkbox"
+              defaultChecked={numberAllowed}
+              onChange={()=>{
+                setNumberAllowed((prev) => !prev);
+              }}
+            />
+            <label htmlFor="number">Numbers{numberAllowed}</label>
+          </div>
+          <div>
+            <input type="checkbox"
+              defaultChecked={charAllowed}
+              onChange={()=>{
+                setCharAllowed((prev)=>!prev);
+              }}
+            />
+            <label htmlFor="Charachter">Charachter</label>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
